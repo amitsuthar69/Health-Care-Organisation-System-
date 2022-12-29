@@ -1,20 +1,47 @@
 #include <stdio.h>
 #include <string.h>
 
-int output();
-int details();
 int age1, doa;
 long long con_num1, con_num2;
 char name1[100], name2[100], sym[50], add1[100], bg1[3], gen1[11], rel[50];
 
-int main() {
-    printf(
-        "-------------------------------------------------------------------\n");
-    printf(
-        "                  Health Care Organisation System                  \n");
-    printf(
-        "-------------------------------------------------------------------\n");
-    details();
+int output() {
+
+    printf("-------------------> Health Care Organistion <-----------------\n");
+    printf("\n");
+    printf("---------------------------------------------------------------\n");
+    printf("                       > PAATIENT DETAILS <                    \n");
+    printf("---------------------------------------------------------------\n");
+    printf("\n");
+
+    printf("\tName of the Patient: %s\n", name1);
+    printf("\n");
+    printf("\tPatient's Age: %d\n", age1);
+    printf("\n");
+    printf("\tPatient's Gender: %s\n", gen1);
+    printf("\n");
+    printf("\tPatient's Blood Group: %s\n", bg1);
+    printf("\n");
+    printf("\tPatient's Contact Number: %lld\n", con_num1);
+    printf("\n");
+
+    printf("\tGuardian's Contact Number: %lld\n", con_num2);
+    printf("\n");
+    printf("\tGuardian's Relation with Patient: %s\n", rel);
+    printf("\n");
+
+    printf("\tPatient's Resedential Address: %s\n", add1);
+    printf("\n");
+
+    printf("\tPatient's Symptoms: %s\n", sym);
+
+    printf("\n");
+    printf("\n");
+
+    printf("\t Do you want to re-submit the form or EXIT ?");
+    printf("\t1. Continue\n");
+    printf("\t2. EXIT\n");
+    return 0;
 }
 
 int details() {
@@ -58,51 +85,29 @@ int details() {
     return 0;
 }
 
-int output() {
-    int exit();
+int health_care() {
+    details();
+    output();
+    return 0;
+}
 
-    printf("-------------------> Health Care Organistion <-----------------\n");
-    printf("\n");
-    printf("---------------------------------------------------------------\n");
-    printf("                       > PAATIENT DETAILS <                    \n");
-    printf("---------------------------------------------------------------\n");
-    printf("\n");
-
-    printf("\tName of the Patient: %s\n", name1);
-    printf("\n");
-    printf("\tPatient's Age: %d\n", age1);
-    printf("\n");
-    printf("\tPatient's Gender: %s\n", gen1);
-    printf("\n");
-    printf("\tPatient's Blood Group: %s\n", bg1);
-    printf("\n");
-    printf("\tPatient's Contact Number: %lld\n", con_num1);
-    printf("\n");
-
-    printf("\tGuardian's Contact Number: %lld\n", con_num2);
-    printf("\n");
-    printf("\tGuardian's Relation with Patient: %s\n", rel);
-    printf("\n");
-
-    printf("\tPatient's Resedential Address: %s\n", add1);
-    printf("\n");
-
-    printf("\tPatient's Symptoms: %s\n", sym);
-
-    printf("\n");
-    printf("\n");
-
-    printf("\t Do you want to re-submit the form or EXIT ?");
-    printf("\t1. Continue\n");
-    printf("\t2. EXIT\n");
+int main() {
+    printf(
+        "-------------------------------------------------------------------\n");
+    printf(
+        "                  Health Care Organisation System                  \n");
+    printf(
+        "-------------------------------------------------------------------\n");
+    puts("Enter 1 for entering your details and 2 to exit the program - ");
+    int exit_task;
     scanf("%d", &exit_task);
 
     switch (exit_task) {
     case 1:
-        main();
+        health_care();
         break;
     case 2:
-        printf("\tHopeyou enjoyed it! STAY SAFE");
+        printf("\n\tHope you enjoyed it! STAY SAFE");
         break;
     }
     return 0;
